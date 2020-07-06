@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import styles from "./event.component.css";
+
 export const Event = ({
   title,
   description,
@@ -21,7 +23,7 @@ export const Event = ({
       <h6 className="card-subtitle mb-2 text-muted text-left">
         <div className="row">
           <div className="col-1">
-            <i class="fas fa-map-pin"></i>
+            <i className="fas fa-map-pin"></i>
           </div>
           <div className="col">
             {venueName},{address}
@@ -31,7 +33,7 @@ export const Event = ({
       <h6 className="card-subtitle mb-2 text-muted text-left">
         <div className="row">
           <div className="col-1">
-            <i class="far fa-calendar-minus"></i>
+            <i className="far fa-calendar-minus"></i>
           </div>
           <div className="col">
             {eventStart} - {eventEnd}
@@ -40,27 +42,39 @@ export const Event = ({
       </h6>
       {/* <p className="card-text">{description}</p> */}
       <Speakers />
-      <button className="btn btn-outline-info">
-        <Link to={url} className="card-link">
-          RSVP
-        </Link>
-      </button>
+      <Link to={url} className="card-link">
+        <button className="btn btn-primary btn-sm">RSVP</button>
+      </Link>
     </div>
   </div>
 );
 
 function Speakers() {
   return (
-    <section>
+    <section className={styles.speakers}>
       <p>SPEAKERS</p>
-      <div className="thumbnail">
-        <img src="../../../assets/img/speaker_avatar.png" alt="event speaker" />
-      </div>
-      <div className="thumbnail">
-        <img src="../../../assets/img/speaker_avatar.png" alt="event speaker" />
-      </div>
-      <div className="thumbnail">
-        <img src="../../../assets/img/speaker_avatar.png" alt="event speaker" />
+      <div className={styles.speakersRow}>
+        <div className={styles.speakerThumbnail}>
+          <img
+            src="../../../assets/img/speaker_avatar.png"
+            alt="event speaker"
+            className={styles.speakerImage}
+          />
+        </div>
+        <div className={styles.speakerThumbnail}>
+          <img
+            src="../../../assets/img/speaker_avatar.png"
+            alt="event speaker"
+            className={styles.speakerImage}
+          />
+        </div>
+        <div className={styles.speakerThumbnail}>
+          <img
+            src="../../../assets/img/speaker_avatar.png"
+            alt="event speaker"
+            className={styles.speakerImage}
+          />
+        </div>
       </div>
     </section>
   );

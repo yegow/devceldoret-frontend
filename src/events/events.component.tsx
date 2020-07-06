@@ -17,7 +17,7 @@ export default function Events() {
       <div className="container">
         <div className="row">
           {events.map(event => (
-            <div className="col-md-4">
+            <div className="col-md-4" key={event.id}>
               <Event {...event} />
             </div>
           ))}

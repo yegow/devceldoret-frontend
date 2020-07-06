@@ -1,0 +1,41 @@
+.speakers {
+  margin-bottom: 0.5em;
+}
+
+.speakers > p {
+  margin-bottom: 0;
+}
+
+.speakersRow {
+  display: flex;
+  justify-content: center;
+  padding-right: 1em;
+}
+
+.speakerThumbnail {
+  width: 3em;
+  height: 3em;
+}
+
+.speakerImage {
+  width: 3em;
+  height: 3em;
+  object-fit: cover;
+  border: 4px solid #3b5998;
+  border-radius: 50%;
+}
+
+.speakerThumbnail:nth-child(1) {
+  margin-left: 1em;
+  z-index: 2;
+}
+
+.speakerThumbnail:nth-child(2) {
+  margin-left: -1em;
+  z-index: 1;
+}
+
+.speakerThumbnail:nth-child(3) {
+  margin-left: -1em;
+  z-index: 0;
+}
